@@ -1,3 +1,6 @@
+from time import time
+
+t = time()
 totalFemenino = 0
 totalMasculino = 0
 with open("PADRON_COMPLETO.txt", "r", encoding="iso-8859-1") as archlectura:
@@ -20,7 +23,6 @@ with open("Distelec.txt", "r", encoding="iso-8859-1") as distritos:
         cadaDistrito = int(elementos.pop(0))
         distritosDict[cadaDistrito] = elementos.pop()
         personasDistritos[cadaDistrito] = (0, 0)
-
 with open("PADRON_COMPLETO.txt", "r", encoding="iso-8859-1") as archlectura:
     for line in archlectura:
         elementos = line.split(",")
@@ -40,6 +42,6 @@ for numero, distrito in distritosDict.items():
     hombres = personasDistritos[numero][0]
     mujeres = personasDistritos[numero][1]
     print(f"En el distrito: {distrito} Mujeres: {mujeres} Hombres {hombres}")
-
+print(time()-t)
 
 
