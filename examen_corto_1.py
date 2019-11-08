@@ -35,7 +35,7 @@ while 1:
                 if contadorBilletes == 0:
                     pass
                 else:
-                    print(f"{contadorBilletes} de {billete}")
+                    print(f"{contadorBilletes} de {billete: ,}")
 
 # Ejercicio 2
 print("Ejercicio 2. Palindromos")
@@ -72,19 +72,10 @@ while 1:
     if lista == "-1":
         break
     lista2 = lista.split(",")
-    tamannoLista1 = len(lista1)
-    tamannoLista2 = len(lista2)
-    if tamannoLista1 <= tamannoLista2:
-        for elemento in lista1:
-            for posicion in range(tamannoLista2):
-                if elemento == lista2[posicion]:
-                    print("Elemento en comun: ", elemento)
-                    comun = 1
-    else:
-        for elemento in lista2:
-            for posicion in range(tamannoLista1):
-                if elemento == lista1[posicion]:
-                    print("Elemento en comun: ", elemento)
-                    comun = 1
+    for elemento in lista1:
+        for posicion in range(len(lista2)):
+            if elemento == lista2[posicion]:
+                print("Elemento en comun: ", elemento)
+                comun = 1
     if comun == 0:
         print("No existen elementos en comun")
