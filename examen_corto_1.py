@@ -32,10 +32,9 @@ while 1:
             print("Solo montos en combinaciones de billetes de 2,000 , 5,000 y 10,000")
         else:
             for billete, contadorBilletes in contador.items():
-                if contadorBilletes == 0:
-                    pass
-                else:
+                if contadorBilletes != 0:
                     print(f"{contadorBilletes} de {billete: ,}")
+
 
 # Ejercicio 2
 print("Ejercicio 2. Palindromos")

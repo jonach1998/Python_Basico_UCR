@@ -23,8 +23,9 @@ def listaAleatorios(n):
 #             lista[cadaNumero] = temporal
 
 # Optimizado, basado en: https://es.wikipedia.org/wiki/Ordenamiento_de_burbuja
-lista = listaAleatorios(15)
+lista = listaAleatorios(4)
 print(lista)
+print(len(lista))
 for i in range(1, len(lista), +1):
     for j in range(0, len(lista) - i, +1):
         if lista[j] > lista[j + 1]:
