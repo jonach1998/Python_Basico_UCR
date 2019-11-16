@@ -43,6 +43,7 @@ class Distribuidor:
         monto = 0
         cantidadDescuento = 0
 
+    # Este metodo se hace antes que los demas metodos,se hace cuando se crea el objeto
     def __init__(self):
         producto1 = Producto()
         producto1.asignarNombre("Cloro")
