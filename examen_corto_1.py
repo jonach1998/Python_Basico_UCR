@@ -72,8 +72,8 @@ while 1:
         break
     lista2 = lista.split(",")
     for elemento in lista1:
-        for posicion in range(len(lista2)):
-            if elemento == lista2[posicion]:
+        for elemento2 in lista2:
+            if elemento == elemento2:
                 print("Elemento en comun: ", elemento)
                 comun = 1
     if comun == 0:
