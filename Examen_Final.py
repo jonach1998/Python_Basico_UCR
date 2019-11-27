@@ -7,23 +7,28 @@ art = dict()
 with open("facturas-general.csv", "r") as documento:
     for line in documento:
         elementos = line.replace("\n", "").replace(",", ".").split(";")
-        if int(elementos[7]) in annos.keys():
-            annos[int(elementos[7])] += float(elementos[5])
-            if elementos[6] in cat:
-                categorias[int(elementos[7])][elementos[6]] += float(elementos[5])
+        anno = int(elementos[7])
+        venta = float(elementos[5])
+        categoria = elementos[6]
+        producto = elementos[2]
+        if anno in annos.keys():
+            annos[anno] += venta
+            if categoria in cat:
+                categorias[anno][categoria] += venta
             else:
-                cat[elementos[6]] = float(elementos[5])
-                categorias[int(elementos[7])] = cat
-            if elementos[2] in art:
-                articulos[int(elementos[7])][elementos[2]] += float(elementos[5])
+                cat[categoria] = venta
+                categorias[anno] = cat
+
+            if producto in art:
+                articulos[anno][producto] += venta
             else:
-                art[elementos[2]] = float(elementos[5])
-                articulos[int(elementos[7])] = art
+                art[producto] = venta
+                articulos[anno] = art
         else:
-            annos[int(elementos[7])] = float(elementos[5])
-            cat[elementos[6]] = float(elementos[5])
-            categorias[int(elementos[7])] = cat
-            art[elementos[2]] = float(elementos[5])
+            annos[anno] = venta
+            cat[categoria] = venta
+            categorias[anno] = cat
+            art[producto] = venta
             articulos[int(elementos[7])] = art
 
 with open("Informe 1", "w+") as informe1:
