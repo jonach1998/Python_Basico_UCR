@@ -31,25 +31,25 @@ with open("facturas-general.csv", "r") as documento:
             art[producto] = venta
             articulos[int(elementos[7])] = art
 
-with open("Informe 1", "w+") as informe1:
-    print("Informe 1")
+with open("Informe 1.txt", "w+") as informe1:
+    print("\nInforme 1")
     for anno, venta in annos.items():
         informe1.write(f"{anno}: \n\tVentas: {venta: ,.3f} \n")
-        print(f"{anno}: \n\tVentas: {venta: ,.3f} \n")
-with open("Informe 2", "w+") as informe2:
-    print("Informe 2")
+        print(f"{anno}: \n\tVentas: {venta: ,.3f}")
+with open("Informe 2.txt", "w+") as informe2:
+    print("\nInforme 2")
     for anno, cadaDiccionario in categorias.items():
         informe2.write(f"{anno} \n")
-        print(f"{anno} \n")
+        print(f"{anno}")
         for categoria, venta in cat.items():
             informe2.write(f"\t{categoria} \n\t\tVentas: {venta: ,.3f} \n")
-            print(f"\t{categoria} \n\t\tVentas: {venta: ,.3f} \n")
+            print(f"\t{categoria} \n\t\tVentas: {venta: ,.3f}")
 
-with open("Informe 3", "w+") as informe2:
-    print("Informe 3")
+with open("Informe 3.txt", "w+") as informe2:
+    print("\nInforme 3")
     for anno, cadaDiccionario in articulos.items():
         informe2.write(f"{anno} \n")
-        print(f"{anno} \n")
+        print(f"{anno}")
         for producto, venta in art.items():
             informe2.write(f"\t{producto} \n\t\tVentas: {venta: ,.3f} \n")
-            print(f"\t{producto} \n\t\tVentas: {venta: ,.3f} \n")
+            print(f"\t{producto} \n\t\tVentas: {venta: ,.3f}")
